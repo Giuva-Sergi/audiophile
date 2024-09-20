@@ -52,7 +52,7 @@
 }
 
 .secondaryProductCard {
-  background-image: url("assets/home/desktop/image-speaker-zx7.jpg");
+  background-image: url("/assets/home/desktop/image-speaker-zx7.jpg");
   background-size: cover;
   padding: 6.25rem 0 6.25rem 5rem;
   border-radius: 0.5rem;
@@ -60,13 +60,13 @@
 
 @media (max-width: 1000px) {
   .secondaryProductCard {
-    background-image: url("assets/home/tablet/image-speaker-zx7.jpg");
+    background-image: url("/assets/home/tablet/image-speaker-zx7.jpg");
   }
 }
 
 @media (max-width: 800px) {
   .secondaryProductCard {
-    background-image: url("assets/home/mobile/image-speaker-zx7.jpg");
+    background-image: url("/assets/home/mobile/image-speaker-zx7.jpg");
     background-position: left;
     padding-left: 1rem;
   }

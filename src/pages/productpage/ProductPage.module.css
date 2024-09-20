@@ -1,5 +1,7 @@
 .main {
-  height: 120vh;
+  display: grid;
+  gap: 10rem;
+  margin-block: 10rem;
 }
 
 .productHeader {

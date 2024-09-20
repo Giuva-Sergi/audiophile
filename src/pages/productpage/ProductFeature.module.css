@@ -1,0 +1,11 @@
+.productFeature {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(1rem, 7vw, 5rem);
+}
+
+@media (max-width: 1000px) {
+  .productFeature {
+    grid-template-rows: minmax(5rem, auto) 1fr;
+  }
+}

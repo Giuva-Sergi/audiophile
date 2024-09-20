@@ -15,8 +15,8 @@ function SecondaryNavigation({ isMenu, isOpened }: SecondaryNavigationProps) {
       <ul
         className={classNames(styles.navLinks, { [styles.menuLinks]: isMenu })}
       >
-        {categories.map((cat) => (
-          <CategoryCard key={cat} text={cat} />
+        {categories.map((cat, i) => (
+          <CategoryCard key={i} text={cat} />
         ))}
       </ul>
     </nav>

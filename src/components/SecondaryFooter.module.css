@@ -2,7 +2,7 @@
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap-reverse;
-  margin-bottom: 14rem;
+  margin-block: 10rem;
 }
 
 .textContainer {

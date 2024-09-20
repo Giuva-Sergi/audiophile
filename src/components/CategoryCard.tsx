@@ -4,11 +4,12 @@ import styles from "./CategoryCard.module.css";
 interface CategoryCardProps {
   text: string;
 }
+
 function CategoryCard({ text }: CategoryCardProps) {
   return (
     <li className={styles.card}>
       <img
-        src={`assets/shared/desktop/image-category-thumbnail-${text}.png`}
+        src={`/assets/shared/desktop/image-category-thumbnail-${text}.png`}
         alt={`${text} thumbnail`}
         className={styles.thumbnail}
       />

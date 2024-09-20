@@ -28,9 +28,6 @@ function Header() {
           />
         </Container>
       </header>
-      {/* {isMenuOpened && (
-        <SecondaryNavigation isMenu={true} isOpened={isMenuOpened} />
-      )} */}
       <SecondaryNavigation isMenu={true} isOpened={isMenuOpened} />
     </>
   );

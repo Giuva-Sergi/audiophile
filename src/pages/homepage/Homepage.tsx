@@ -18,8 +18,8 @@ function Homepage() {
         <Main>
           <SecondaryNavigation />
           <ProductGallery />
-          <SecondaryFooter />
         </Main>
+        <SecondaryFooter />
       </Container>
     </>
   );

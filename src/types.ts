@@ -1,15 +1,43 @@
+export interface Image {
+  desktop: string;
+  mobile: string;
+  tablet: string;
+}
+
+export interface Include {
+  quantity: number;
+  item: string;
+}
+
+export interface Other {
+  slug: string;
+  name: string;
+  image: Image;
+}
+
+export interface Gallery {
+  first: Image;
+  second: Image;
+  third: Image;
+}
+
 export interface Product {
   id: number;
   slug: string;
   name: string;
-  image: object;
+  image: Image;
   category: string;
-  categoryImage: object;
+  categoryImage: Image;
   new: boolean;
   price: number;
   description: string;
   features: string;
-  includes: Array<object>;
-  gallery: object;
-  others: Array<object>;
+  includes: Array<Include>;
+  gallery: Gallery;
+  others: Array<Other>;
 }
+
+export type ProductFeature = Pick<
+  Product,
+  "new" | "name" | "description" | "slug"
+>;
