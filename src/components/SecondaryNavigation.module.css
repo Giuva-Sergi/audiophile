@@ -32,5 +32,11 @@
   height: 80dvh;
   overflow-y: scroll;
   border-radius: 0 0 0.5rem 0.5rem;
+  transform: translateY(-100%);
+  transition: transform 0.5s, box-shadow 0.5s 0.2s;
+}
+
+.menuOpened {
+  transform: translateY(0);
   box-shadow: 0 0 100vmax 100vmax rgb(0 0 0 / 0.4);
 }

@@ -22,7 +22,17 @@ function SecondaryNavigation({ isMenu, isOpened }: SecondaryNavigationProps) {
     </nav>
   );
 
-  return isMenu ? <div className={styles.menuWrapper}>{content}</div> : content;
+  return isMenu ? (
+    <div
+      className={classNames(styles.menuWrapper, {
+        [styles.menuOpened]: isOpened,
+      })}
+    >
+      {content}
+    </div>
+  ) : (
+    content
+  );
 }
 
 export default SecondaryNavigation;
