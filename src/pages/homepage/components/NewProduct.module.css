@@ -1,0 +1,24 @@
+.newProduct {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  width: 36%;
+}
+
+.overline {
+  color: var(--primary-clr-600);
+  font-size: var(--fs-overline);
+  line-height: var(--line-space-overline);
+  letter-spacing: var(--char-space-overline);
+}
+
+.newProduct h1 {
+  font-size: var(--fs-h1);
+  line-height: var(--line-space-h1);
+  letter-spacing: var(--char-space-h1);
+  text-transform: uppercase;
+}
+
+.description {
+  color: var(--primary-clr-600);
+}

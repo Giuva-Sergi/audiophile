@@ -1,0 +1,70 @@
+.btn {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-size: var(--fs-subtitle);
+  font-weight: var(--fw-bold);
+  padding: 1em 2em;
+  width: 10rem;
+  text-align: center;
+  display: inline-block;
+}
+
+.btn-dense {
+  color: var(--accent-clr-100);
+  background-color: var(--primary-clr-500);
+  transition: background-color 0.3s;
+}
+
+.btn-dense:hover {
+  background-color: var(--accent-clr-300);
+}
+
+.btn-outline {
+  outline: 2px solid var(--accent-clr-900);
+  color: var(--accent-clr-900);
+  transition: all 0.3s;
+}
+
+.btn-outline:hover {
+  background-color: var(--accent-clr-900);
+  color: var(--accent-clr-100);
+}
+
+.btn-transparent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5em;
+  color: var(--primary-clr-600);
+}
+
+.btn-transparent,
+img {
+  transition: all 0.3s;
+}
+
+.btn-transparent:hover {
+  color: var(--primary-clr-500);
+}
+
+.btn-transparent:hover > img {
+  transform: translateX(5px);
+}
+
+.btn-menu {
+  padding: 0;
+  width: 1rem;
+  aspect-ratio: 1;
+  background-image: url("/assets/shared/tablet/icon-hamburger.svg");
+  background-size: cover;
+  z-index: 9999;
+}
+
+@media (min-width: 700px) {
+  .btn-menu {
+    display: none;
+  }
+}

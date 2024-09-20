@@ -1,0 +1,13 @@
+.hero {
+  background-color: var(--primary-clr-900);
+  background-image: url("/assets/home/desktop/image-hero.jpg");
+  background-position: center -120px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-blend-mode: difference;
+  height: 100vh;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}

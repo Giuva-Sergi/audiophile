@@ -1,0 +1,6 @@
+.header {
+  background-color: var(--accent-clr-900);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}

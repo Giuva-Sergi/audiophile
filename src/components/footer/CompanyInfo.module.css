@@ -1,0 +1,57 @@
+.companyInfo {
+  color: #777777;
+  font-weight: var(--fw-regular);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.companyDescription {
+  grid-column: 1;
+}
+
+.socials {
+  grid-column: 2;
+  align-self: self-end;
+  place-self: end;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.socials > a img {
+  width: 1.5rem;
+}
+
+@media (max-width: 700px) {
+  .companyDescription {
+    grid-column: 1 / -1;
+  }
+
+  .socials {
+    grid-row: 2;
+  }
+}
+
+@media (max-width: 450px) {
+  .companyInfo {
+    gap: 3rem;
+  }
+
+  .companyDescription {
+    text-align: center;
+  }
+
+  .copyright {
+    grid-row: 2;
+    grid-column: 1/ -1;
+    text-align: center;
+  }
+
+  .socials {
+    grid-row: 3;
+    grid-column: 1/ -1;
+    place-self: center;
+  }
+}

@@ -1,0 +1,125 @@
+.productGallery {
+  display: grid;
+  gap: 5rem;
+}
+.productCard {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  gap: 5rem;
+  background-color: var(--primary-clr-500);
+  background-image: url("/assets/home/desktop/pattern-circles.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: -200px 10%;
+  padding: 7rem 9rem 0;
+  overflow: hidden;
+  border-radius: 0.5rem;
+}
+
+.pictureContainer {
+  transform: translateY(0.5rem);
+}
+
+.textContainer {
+  color: var(--accent-clr-100);
+  display: grid;
+  gap: 2.5rem;
+}
+
+.textContainer h1 {
+  font-size: var(--fs-h1);
+  line-height: var(--line-space-h1);
+  letter-spacing: var(--char-space-h1);
+}
+
+@media (max-width: 1000px) {
+  .productCard {
+    flex-direction: column;
+    align-items: center;
+    background-position: center -10rem;
+    padding: 3rem 1.5rem;
+  }
+
+  .pictureContainer {
+    width: 40%;
+  }
+
+  .textContainer {
+    text-align: center;
+    justify-items: center;
+  }
+}
+
+.secondaryProductCard {
+  background-image: url("assets/home/desktop/image-speaker-zx7.jpg");
+  background-size: cover;
+  padding: 6.25rem 0 6.25rem 5rem;
+  border-radius: 0.5rem;
+}
+
+@media (max-width: 1000px) {
+  .secondaryProductCard {
+    background-image: url("assets/home/tablet/image-speaker-zx7.jpg");
+  }
+}
+
+@media (max-width: 800px) {
+  .secondaryProductCard {
+    background-image: url("assets/home/mobile/image-speaker-zx7.jpg");
+    background-position: left;
+    padding-left: 1rem;
+  }
+}
+
+.innerContainer {
+  display: grid;
+  gap: 2rem;
+}
+
+.secondaryProductCard h4 {
+  font-size: var(--fs-h4);
+  line-height: var(--line-space-h4);
+  letter-spacing: var(--char-space-h4);
+}
+
+.productCardFlex {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.productCardFlex img,
+.productCardFlex .innerContainerFlex {
+  border-radius: 0.5rem;
+}
+
+.pictureFlex {
+  width: 50%;
+}
+
+.innerContainerFlex {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  flex-grow: 1;
+  background-color: var(--accent-clr-200);
+  justify-content: start;
+  place-content: center;
+  padding-left: 4rem;
+}
+
+@media (max-width: 800px) {
+  .pictureFlex {
+    width: 100%;
+  }
+
+  .productCardFlex {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .innerContainerFlex {
+    padding: 2.5rem 0 2.5rem 1.5rem;
+  }
+}

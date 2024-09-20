@@ -1,0 +1,36 @@
+.secondaryNav {
+  place-self: center;
+}
+
+.navLinks {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  padding: 0;
+}
+
+@media (max-width: 1200px) {
+  .navLinks {
+    gap: 0.8rem;
+  }
+}
+
+@media (max-width: 700px) {
+  .navLinks {
+    gap: 4rem;
+    z-index: 1000;
+  }
+}
+
+.menuWrapper {
+  position: fixed;
+  background-color: var(--accent-clr-100);
+  padding: 4rem 2.5rem 1rem;
+  z-index: 100;
+  height: 80dvh;
+  overflow-y: scroll;
+  border-radius: 0 0 0.5rem 0.5rem;
+  box-shadow: 0 0 100vmax 100vmax rgb(0 0 0 / 0.4);
+}

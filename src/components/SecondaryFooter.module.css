@@ -1,0 +1,44 @@
+.secondaryFooter {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap-reverse;
+  margin-bottom: 14rem;
+}
+
+.textContainer {
+  width: 40%;
+  display: grid;
+  gap: 2rem;
+  align-self: center;
+}
+
+.textContainer h2 {
+  font-size: var(--fs-h2);
+  line-height: var(--line-space-h2);
+  letter-spacing: var(--char-space-h2);
+  text-transform: uppercase;
+}
+
+.textContainer span {
+  color: var(--primary-clr-500);
+}
+
+.textContainer p {
+  font-weight: var(--fw-medium);
+}
+
+.pictureContainer img {
+  border-radius: 0.5rem;
+}
+
+@media (max-width: 1000px) {
+  .secondaryFooter {
+    gap: 4rem;
+    justify-content: center;
+    margin-bottom: 8rem;
+  }
+  .textContainer {
+    width: 100%;
+    text-align: center;
+  }
+}

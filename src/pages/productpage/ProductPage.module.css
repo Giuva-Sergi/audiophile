@@ -1,0 +1,14 @@
+.main {
+  height: 120vh;
+}
+
+.productHeader {
+  font-size: var(--fs-h2);
+  line-height: var(--line-space-h2);
+  letter-spacing: var(--char-space-h2);
+  text-transform: uppercase;
+  text-align: center;
+  padding-block: 6.125rem;
+  background-color: var(--primary-clr-900);
+  color: var(--accent-clr-100);
+}

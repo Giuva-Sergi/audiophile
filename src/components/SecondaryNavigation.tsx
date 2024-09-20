@@ -1,0 +1,28 @@
+import CategoryCard from "./CategoryCard";
+import styles from "./SecondaryNavigation.module.css";
+import classNames from "classnames";
+
+const categories = ["headphones", "speakers", "earphones"];
+
+interface SecondaryNavigationProps {
+  isMenu?: boolean;
+  isOpened?: boolean;
+}
+
+function SecondaryNavigation({ isMenu, isOpened }: SecondaryNavigationProps) {
+  const content = (
+    <nav className={styles.secondaryNav}>
+      <ul
+        className={classNames(styles.navLinks, { [styles.menuLinks]: isMenu })}
+      >
+        {categories.map((cat) => (
+          <CategoryCard key={cat} text={cat} />
+        ))}
+      </ul>
+    </nav>
+  );
+
+  return isMenu ? <div className={styles.menuWrapper}>{content}</div> : content;
+}
+
+export default SecondaryNavigation;

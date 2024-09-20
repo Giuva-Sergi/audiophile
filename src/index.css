@@ -1,0 +1,99 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap");
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  font-family: "Manrope", sans-serif;
+  font-weight: var(--fw-medium);
+  line-height: 1.5rem;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+#root,
+#__next {
+  isolation: isolate;
+}
+
+:root {
+  --primary-clr-900: hsl(0, 0%, 6%);
+  --primary-clr-600: #777777;
+  --primary-clr-500: hsl(22, 65%, 57%);
+  --primary-clr-200: hsl(0, 0%, 95%);
+  --primary-clr-100: hsl(0, 0%, 98%);
+
+  --accent-clr-900: hsl(0, 0%, 0%);
+  --accent-clr-300: hsl(21, 94%, 75%);
+  --accent-clr-200: #f1f1f1;
+  --accent-clr-100: hsl(0, 0%, 100%);
+
+  --fs-h1: 3.5rem;
+  --line-space-h1: 3.5rem;
+  --char-space-h1: 2px;
+
+  --fs-h2: 2.5rem;
+  --line-space-h2: 2.75rem;
+  --char-space-h2: 1.5px;
+
+  --fs-h3: 2rem;
+  --line-space-h3: 2.25rem;
+  --char-space-h3: 1.15px;
+
+  --fs-h4: 1.75rem;
+  --line-space-h4: 2.375rem;
+  --char-space-h4: 2px;
+
+  --fs-h5: 1.5rem;
+  --line-space-h5: 2rem;
+  --char-space-h5: 1.7px;
+
+  --fs-h6: 1.125rem;
+  --line-space-h6: 1.3rem;
+  --char-space-h6: 1.5px;
+
+  --fs-overline: 0.875rem;
+  --line-space-overline: 1.1875rem;
+  --char-space-overline: 10px;
+
+  --fs-subtitle: 0.8125rem;
+  --line-space-subtitle: 1.5rem;
+  --char-space-subtitle: 1px;
+
+  --fw-bold: 700;
+  --fw-medium: 500;
+  --fw-regular: 400;
+}
