@@ -5,6 +5,7 @@ import data from "../../data/data.json";
 import SecondaryNavigation from "../../components/SecondaryNavigation";
 import SecondaryFooter from "../../components/SecondaryFooter";
 import ProductFeature from "./ProductFeature";
+import Main from "../../components/Main";
 
 function ProductPage() {
   const { productCategory } = useParams();
@@ -17,7 +18,7 @@ function ProductPage() {
     <>
       <h2 className={styles.productHeader}>{productCategory}</h2>
       <Container>
-        <main className={styles.main}>
+        <Main>
           {filteredProducts.map((prod, i) => (
             <ProductFeature
               key={prod.id}
@@ -25,7 +26,7 @@ function ProductPage() {
               reverse={i % 2 ? false : true}
             />
           ))}
-        </main>
+        </Main>
         <SecondaryNavigation />
         <SecondaryFooter />
       </Container>

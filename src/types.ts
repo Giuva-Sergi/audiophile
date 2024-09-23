@@ -10,6 +10,7 @@ export interface Include {
 }
 
 export interface Other {
+  category: string;
   slug: string;
   name: string;
   image: Image;
@@ -39,5 +40,5 @@ export interface Product {
 
 export type ProductFeature = Pick<
   Product,
-  "new" | "name" | "description" | "slug"
+  "new" | "name" | "description" | "slug" | "price"
 >;

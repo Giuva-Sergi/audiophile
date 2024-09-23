@@ -22,6 +22,7 @@ function ProductFeature({ product, reverse }: ProductFeatureProps) {
               name: product.name,
               description: product.description,
               slug: product.slug,
+              price: product.price,
             }}
           />
         </>
