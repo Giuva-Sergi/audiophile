@@ -48,12 +48,35 @@ export const cartSlice = createSlice({
         state.cart.push(action.payload);
       }
     },
+    removeAllItems: (state) => {
+      state.cart = [];
+      state.isVisible = false;
+    },
+    handleQuantity: (state, action: PayloadAction<CartProduct>) => {
+      if (action.payload.quantity === 0) {
+        state.cart = state.cart.filter((item) => item.id !== action.payload.id);
+      }
+      state.cart = state.cart.map((item) =>
+        item.id === action.payload.id
+          ? { ...item, quantity: action.payload.quantity }
+          : item
+      );
+    },
     handleVisibility: (state) => {
       state.isVisible = !state.isVisible;
+    },
+    handleCheckout: (state) => {
+      state.isCheckout = !state.isCheckout;
     },
   },
 });
 
-export const { handleItem, handleVisibility } = cartSlice.actions;
+export const {
+  handleItem,
+  removeAllItems,
+  handleQuantity,
+  handleVisibility,
+  handleCheckout,
+} = cartSlice.actions;
 
 export default cartSlice.reducer;

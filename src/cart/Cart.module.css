@@ -45,8 +45,8 @@
   padding: 0;
   display: grid;
   gap: 1.5rem;
-  max-height: 20rem;
-  overflow: scroll;
+  max-height: 15rem;
+  overflow-y: scroll;
 }
 
 .total {
