@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Button from "../../components/Button";
 import { CartProduct, ProductFeature } from "../../types";
 import styles from "./ProductArticle.module.css";
@@ -6,6 +6,7 @@ import classNames from "classnames";
 import { useDispatch, useSelector } from "react-redux";
 import { handleItem } from "../../cart/cartSlice";
 import { RootState } from "../../store";
+import { useLocation } from "react-router-dom";
 
 interface ProductArticleProps {
   product: ProductFeature;
@@ -17,7 +18,12 @@ function ProductArticle({ product, detailPage }: ProductArticleProps) {
     (state: RootState) => state.cart.cart
   ).find((p: CartProduct) => p.id === product.id);
   const dispatch = useDispatch();
-  const [quantity, setQuantity] = useState(productInCart?.quantity || 0);
+  const [quantity, setQuantity] = useState(0);
+  const location = useLocation();
+
+  useEffect(() => {
+    setQuantity(productInCart?.quantity || 0);
+  }, [location.pathname, productInCart]);
 
   if (!product) {
     return <h2>Product not found</h2>;
@@ -38,6 +44,7 @@ function ProductArticle({ product, detailPage }: ProductArticleProps) {
         id: product.id,
         name: product.name,
         price: product.price,
+        slug: product.slug,
         quantity,
       })
     );

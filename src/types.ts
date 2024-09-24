@@ -43,6 +43,9 @@ export type ProductFeature = Pick<
   "id" | "new" | "name" | "description" | "slug" | "price"
 >;
 
-export type CartProduct = Pick<ProductFeature, "id" | "name" | "price"> & {
+export type CartProduct = Pick<
+  ProductFeature,
+  "id" | "name" | "price" | "slug"
+> & {
   quantity: number;
 };

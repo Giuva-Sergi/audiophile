@@ -3,6 +3,8 @@ import styles from "./Navbar.module.css";
 import logo from "/assets/shared/desktop/logo.svg";
 import cartIcon from "/assets/shared/desktop/icon-cart.svg";
 import Button from "../Button";
+import { useDispatch } from "react-redux";
+import { handleVisibility } from "../../cart/cartSlice";
 
 interface NavbarProps {
   isMenuOpened: boolean;
@@ -10,6 +12,11 @@ interface NavbarProps {
 }
 
 function Navbar({ isMenuOpened, setIsMenuOpened }: NavbarProps) {
+  const dispatch = useDispatch();
+
+  function handleClick() {
+    dispatch(handleVisibility());
+  }
   return (
     <>
       <nav className={styles.primaryNav}>
@@ -32,7 +39,7 @@ function Navbar({ isMenuOpened, setIsMenuOpened }: NavbarProps) {
             <Link to="/product/earphones">earphones</Link>
           </li>
         </ul>
-        <button>
+        <button onClick={handleClick}>
           <img src={cartIcon} alt="cart icon" />
         </button>
       </nav>
