@@ -7,7 +7,7 @@ import ProductDetail from "./pages/productdetail/ProductDetail";
 function App() {
   return (
     // <Cart />
-    // <Routes>
+    <Routes>
       <Route path="/" element={<AppLayout />}>
         <Route index element={<Homepage />} />
         <Route path="product/:productCategory" element={<ProductPage />} />
