@@ -70,6 +70,15 @@
   gap: clamp(1rem, 2vw, 3.5rem);
 }
 
+.btnNavigate {
+  border: none;
+  background-color: transparent;
+  color: var(--primary-clr-600);
+  cursor: pointer;
+  place-self: flex-start;
+  /* margin-block: -8rem; */
+}
+
 @media (max-width: 750px) {
   .displaySection {
     grid-template-columns: unset;

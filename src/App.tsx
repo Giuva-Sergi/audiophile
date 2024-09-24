@@ -6,7 +6,6 @@ import ProductDetail from "./pages/productdetail/ProductDetail";
 
 function App() {
   return (
-    // <Cart />
     <Routes>
       <Route path="/" element={<AppLayout />}>
         <Route index element={<Homepage />} />

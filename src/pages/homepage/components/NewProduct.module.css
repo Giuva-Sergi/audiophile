@@ -22,3 +22,19 @@
 .description {
   color: var(--primary-clr-600);
 }
+
+@media (max-width: 950px) {
+  .newProduct {
+    width: 100%;
+    align-items: center;
+  }
+
+  .newProduct h1 {
+    font-size: clamp(1rem, 12vw, 3.5rem);
+  }
+
+  .newProduct h1,
+  .description {
+    text-align: center;
+  }
+}

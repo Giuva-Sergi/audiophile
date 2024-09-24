@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import styles from "./ProductDetail.module.css";
 import data from "../../data/data.json";
 import Container from "../../components/Container";
@@ -11,7 +11,7 @@ import OtherCard from "./components/OtherCard";
 
 function ProductDetail() {
   const { slug } = useParams();
-
+  const navigate = useNavigate();
   const product = data.find((prod) => prod.slug === slug);
 
   if (!product) {
@@ -21,6 +21,9 @@ function ProductDetail() {
   return (
     <Container>
       <Main>
+        <button className={styles.btnNavigate} onClick={() => navigate(-1)}>
+          Go back
+        </button>
         <section className={styles.displaySection}>
           <picture className={styles.pictureContainer}>
             <source media="(max-width: 750px)" srcSet={product.image.mobile} />

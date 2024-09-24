@@ -11,3 +11,17 @@
   flex-direction: column;
   justify-content: center;
 }
+
+@media (max-width: 950px) {
+  .hero {
+    background-image: url("/assets/home/tablet/image-header.jpg");
+    background-position: center -120px;
+  }
+}
+
+@media (max-width: 540px) {
+  .hero {
+    background-image: url("/assets/home/mobile/image-header.jpg");
+    background-position: center -180px;
+  }
+}

@@ -9,23 +9,7 @@ export interface CartState {
 }
 
 const initialState: CartState = {
-  // cart: [],
-  cart: [
-    {
-      id: 4,
-      name: "XX99 Mark II Headphones",
-      slug: "xx99-mark-two-headphones",
-      price: 2999,
-      quantity: 1,
-    },
-    {
-      id: 1,
-      name: "YX1 Wireless Earphones",
-      slug: "yx1-earphones",
-      price: 599,
-      quantity: 1,
-    },
-  ],
+  cart: [],
   isCheckout: false,
   isVisible: false,
 };
