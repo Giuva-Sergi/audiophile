@@ -40,5 +40,9 @@ export interface Product {
 
 export type ProductFeature = Pick<
   Product,
-  "new" | "name" | "description" | "slug" | "price"
+  "id" | "new" | "name" | "description" | "slug" | "price"
 >;
+
+export type CartProduct = Pick<ProductFeature, "id" | "name" | "price"> & {
+  quantity: number;
+};

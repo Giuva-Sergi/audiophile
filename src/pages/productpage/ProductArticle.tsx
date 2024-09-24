@@ -3,6 +3,9 @@ import Button from "../../components/Button";
 import { ProductFeature } from "../../types";
 import styles from "./ProductArticle.module.css";
 import classNames from "classnames";
+import { useDispatch, useSelector } from "react-redux";
+import { RootState } from "@reduxjs/toolkit/query";
+import { addItem } from "../../cart/cartSlice";
 
 interface ProductArticleProps {
   product: ProductFeature;
@@ -11,6 +14,11 @@ interface ProductArticleProps {
 
 function ProductArticle({ product, detailPage }: ProductArticleProps) {
   const [quantity, setQuantity] = useState(1);
+
+  const cart = useSelector((state: RootState) => state.cart.cart);
+  const dispatch = useDispatch();
+
+  console.log(cart);
 
   if (!product) {
     return <h2>Product not found</h2>;
@@ -24,6 +32,18 @@ function ProductArticle({ product, detailPage }: ProductArticleProps) {
       setQuantity(quantity - 1);
     }
   }
+
+  function addProduct(product: ProductFeature) {
+    dispatch(
+      addItem({
+        id: product.id,
+        name: product.name,
+        price: product.price,
+        quantity,
+      })
+    );
+  }
+
   return (
     <article
       className={classNames(styles.productCard, {
@@ -46,7 +66,11 @@ function ProductArticle({ product, detailPage }: ProductArticleProps) {
             <span>{quantity}</span>
             <button onClick={() => handleClick("increment")}>+</button>
           </div>
-          <Button type="dense" text="add to cart" />
+          <Button
+            type="dense"
+            text="add to cart"
+            functionHandler={() => addProduct(product)}
+          />
         </div>
       ) : (
         <Button type="dense" text="see product" path={`${product.slug}`} />

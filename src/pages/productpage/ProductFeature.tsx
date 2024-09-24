@@ -9,7 +9,7 @@ interface ProductFeatureProps {
 }
 
 function ProductFeature({ product, reverse }: ProductFeatureProps) {
-  console.log(product.categoryImage);
+  // console.log(product);
 
   return (
     <section className={styles.productFeature}>
@@ -18,6 +18,7 @@ function ProductFeature({ product, reverse }: ProductFeatureProps) {
           <ProductPicture image={product.categoryImage} name={product.name} />
           <ProductArticle
             product={{
+              id: product.id,
               new: product.new,
               name: product.name,
               description: product.description,
@@ -30,10 +31,12 @@ function ProductFeature({ product, reverse }: ProductFeatureProps) {
         <>
           <ProductArticle
             product={{
+              id: product.id,
               new: product.new,
               name: product.name,
               description: product.description,
               slug: product.slug,
+              price: product.price,
             }}
           />
           <ProductPicture image={product.categoryImage} name={product.name} />

@@ -29,10 +29,11 @@ function ProductDetail() {
           </picture>
           <ProductArticle
             product={{
-              name: product?.name,
+              id: product.id,
+              name: product.name,
               new: product.new,
-              description: product?.description,
-              slug: product?.slug,
+              description: product.description,
+              slug: product.slug,
               price: product.price,
             }}
             detailPage={true}
