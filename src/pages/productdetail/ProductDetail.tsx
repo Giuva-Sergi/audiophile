@@ -14,8 +14,6 @@ function ProductDetail() {
 
   const product = data.find((prod) => prod.slug === slug);
 
-  console.log(product);
-
   if (!product) {
     return <h2>Product not found</h2>;
   }

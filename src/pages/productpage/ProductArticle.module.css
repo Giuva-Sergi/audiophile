@@ -59,6 +59,10 @@
   color: var(--primary-clr-500);
 }
 
+.innerContainer button:disabled {
+  cursor: not-allowed;
+}
+
 @media (max-width: 1000px) {
   .productCard {
     grid-row: 2;

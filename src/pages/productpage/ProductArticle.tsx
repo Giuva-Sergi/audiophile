@@ -1,3 +1,4 @@
+import { useState } from "react";
 import Button from "../../components/Button";
 import { ProductFeature } from "../../types";
 import styles from "./ProductArticle.module.css";
@@ -9,8 +10,19 @@ interface ProductArticleProps {
 }
 
 function ProductArticle({ product, detailPage }: ProductArticleProps) {
+  const [quantity, setQuantity] = useState(1);
+
   if (!product) {
     return <h2>Product not found</h2>;
+  }
+
+  function handleClick(actionType: string) {
+    if (actionType === "increment") {
+      setQuantity(quantity + 1);
+    } else if (actionType === "decrement") {
+      if (quantity <= 1) return;
+      setQuantity(quantity - 1);
+    }
   }
   return (
     <article
@@ -25,9 +37,14 @@ function ProductArticle({ product, detailPage }: ProductArticleProps) {
       {detailPage ? (
         <div className={styles.btnContainer}>
           <div className={styles.innerContainer}>
-            <button>-</button>
-            <span>0</span>
-            <button>+</button>
+            <button
+              onClick={() => handleClick("decrement")}
+              disabled={quantity <= 1}
+            >
+              -
+            </button>
+            <span>{quantity}</span>
+            <button onClick={() => handleClick("increment")}>+</button>
           </div>
           <Button type="dense" text="add to cart" />
         </div>
