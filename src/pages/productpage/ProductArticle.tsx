@@ -1,11 +1,11 @@
 import { useState } from "react";
 import Button from "../../components/Button";
-import { ProductFeature } from "../../types";
+import { CartProduct, ProductFeature } from "../../types";
 import styles from "./ProductArticle.module.css";
 import classNames from "classnames";
 import { useDispatch, useSelector } from "react-redux";
-import { RootState } from "@reduxjs/toolkit/query";
-import { addItem } from "../../cart/cartSlice";
+import { handleItem } from "../../cart/cartSlice";
+import { RootState } from "../../store";
 
 interface ProductArticleProps {
   product: ProductFeature;
@@ -13,12 +13,11 @@ interface ProductArticleProps {
 }
 
 function ProductArticle({ product, detailPage }: ProductArticleProps) {
-  const [quantity, setQuantity] = useState(1);
-
-  const cart = useSelector((state: RootState) => state.cart.cart);
+  const productInCart: CartProduct | undefined = useSelector(
+    (state: RootState) => state.cart.cart
+  ).find((p: CartProduct) => p.id === product.id);
   const dispatch = useDispatch();
-
-  console.log(cart);
+  const [quantity, setQuantity] = useState(productInCart?.quantity || 0);
 
   if (!product) {
     return <h2>Product not found</h2>;
@@ -28,14 +27,14 @@ function ProductArticle({ product, detailPage }: ProductArticleProps) {
     if (actionType === "increment") {
       setQuantity(quantity + 1);
     } else if (actionType === "decrement") {
-      if (quantity <= 1) return;
+      if (quantity === 0) return;
       setQuantity(quantity - 1);
     }
   }
 
-  function addProduct(product: ProductFeature) {
+  function handleProduct(product: ProductFeature) {
     dispatch(
-      addItem({
+      handleItem({
         id: product.id,
         name: product.name,
         price: product.price,
@@ -59,7 +58,7 @@ function ProductArticle({ product, detailPage }: ProductArticleProps) {
           <div className={styles.innerContainer}>
             <button
               onClick={() => handleClick("decrement")}
-              disabled={quantity <= 1}
+              disabled={quantity === 0}
             >
               -
             </button>
@@ -69,7 +68,7 @@ function ProductArticle({ product, detailPage }: ProductArticleProps) {
           <Button
             type="dense"
             text="add to cart"
-            functionHandler={() => addProduct(product)}
+            functionHandler={() => handleProduct(product)}
           />
         </div>
       ) : (
