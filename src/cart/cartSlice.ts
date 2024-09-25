@@ -4,13 +4,11 @@ import { CartProduct } from "../types";
 
 export interface CartState {
   cart: Array<CartProduct>;
-  isCheckout: boolean;
   isVisible: boolean;
 }
 
 const initialState: CartState = {
   cart: [],
-  isCheckout: false,
   isVisible: false,
 };
 
@@ -54,9 +52,6 @@ export const cartSlice = createSlice({
     },
     handleVisibility: (state) => {
       state.isVisible = !state.isVisible;
-    },
-    handleCheckout: (state) => {
-      state.isCheckout = !state.isCheckout;
     },
   },
 });

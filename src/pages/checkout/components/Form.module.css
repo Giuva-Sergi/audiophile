@@ -1,0 +1,124 @@
+.formSection {
+  display: grid;
+  gap: 1.5rem;
+  margin-block: 5rem;
+}
+
+.formSection h3 {
+  text-transform: uppercase;
+  font-size: var(--fs-h3);
+  line-height: var(--line-space-h3);
+  letter-spacing: var(--char-space-h3);
+}
+
+.fieldType {
+  text-transform: uppercase;
+  color: var(--primary-clr-500);
+  font-size: var(--fs-subtitle);
+  line-height: var(--line-space-subtitle);
+  letter-spacing: var(--char-space-subtitle);
+  font-weight: var(--fw-bold);
+}
+
+.formGroup {
+  display: grid;
+  gap: 1rem;
+  margin-bottom: 3rem;
+}
+
+.groupedInput {
+  display: flex;
+  gap: 1rem;
+}
+
+.groupedInput div {
+  width: 50%;
+}
+
+.inputContainer {
+  display: grid;
+}
+
+.inputContainer.halfWidth {
+  width: calc(50% - 1rem);
+}
+
+.inputContainer label,
+.flexGroup span,
+.radioContainer label {
+  font-weight: var(--fw-bold);
+}
+
+.inputContainer input,
+.radioContainer {
+  border-radius: 0.4rem;
+  border: none;
+  outline: 2px solid #cfcfcf;
+  padding: 0.5em 1em;
+}
+
+.inputContainer input:focus {
+  outline: 2px solid var(--primary-clr-500);
+}
+
+.flexGroup {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.flexGroup > div {
+  display: grid;
+  gap: 1rem;
+}
+
+.radioContainer {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.radioContainer:has(input:focus) {
+  outline: 2px solid var(--primary-clr-500);
+}
+
+.radioContainer input {
+  -webkit-appearance: none;
+  appearance: none;
+  /* For iOS < 15 to remove gradient background */
+  background-color: #fff;
+  /* Not removed via appearance */
+  margin: 0;
+  font: inherit;
+  color: #cfcfcf;
+  width: 1.15em;
+  height: 1.15em;
+  border: 2px solid currentColor;
+  border-radius: 50%;
+  display: grid;
+  place-content: center;
+}
+
+.radioContainer input::before {
+  content: "";
+  width: 0.65em;
+  height: 0.65em;
+  border-radius: 50%;
+  transform: scale(0);
+  transition: 0.3s transform ease-in-out;
+  box-shadow: inset 1em 1em var(--primary-clr-500);
+}
+
+.radioContainer input:checked::before {
+  transform: scale(1);
+}
+
+.disclaimer {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.disclaimer p {
+  color: var(--primary-clr-600);
+}

@@ -55,3 +55,23 @@
 .innerContainer button:disabled {
   cursor: not-allowed;
 }
+
+.cartItem > .checkout {
+  display: flex;
+  gap: 1rem;
+}
+
+.checkout > div {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.checkout > span {
+  color: var(--primary-clr-600);
+  font-weight: var(--fw-bold);
+  min-width: fit-content;
+}
+
+.checkout > div > div {
+  display: grid;
+}
