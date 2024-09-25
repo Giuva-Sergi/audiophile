@@ -18,6 +18,9 @@ export const cartSlice = createSlice({
   name: "cart",
   initialState,
   reducers: {
+    initializeCart: (state, action: PayloadAction<CartProduct[] | []>) => {
+      state.cart = action.payload;
+    },
     handleItem: (state, action: PayloadAction<CartProduct>) => {
       const productInCart = state.cart.find((p) => p.id === action.payload.id);
 
@@ -31,10 +34,12 @@ export const cartSlice = createSlice({
       } else {
         state.cart.push(action.payload);
       }
+      localStorage.setItem("cart", JSON.stringify(state.cart));
     },
     removeAllItems: (state) => {
       state.cart = [];
       state.isVisible = false;
+      localStorage.setItem("cart", JSON.stringify(state.cart));
     },
     handleQuantity: (state, action: PayloadAction<CartProduct>) => {
       if (action.payload.quantity === 0) {
@@ -45,6 +50,7 @@ export const cartSlice = createSlice({
           ? { ...item, quantity: action.payload.quantity }
           : item
       );
+      localStorage.setItem("cart", JSON.stringify(state.cart));
     },
     handleVisibility: (state) => {
       state.isVisible = !state.isVisible;
@@ -56,6 +62,7 @@ export const cartSlice = createSlice({
 });
 
 export const {
+  initializeCart,
   handleItem,
   removeAllItems,
   handleQuantity,

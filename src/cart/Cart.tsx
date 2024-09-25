@@ -4,6 +4,7 @@ import { RootState } from "../store";
 import CartProductItem from "./CartProduct";
 import Button from "../components/Button";
 import { handleCheckout, removeAllItems } from "./cartSlice";
+
 function Cart() {
   const cart = useSelector((state: RootState) => state.cart.cart);
   const dispatch = useDispatch();
