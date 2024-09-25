@@ -4,8 +4,9 @@ import logo from "/assets/shared/desktop/logo.svg";
 import cartIcon from "/assets/shared/desktop/icon-cart.svg";
 import Button from "../Button";
 import { useDispatch, useSelector } from "react-redux";
-import { handleVisibility } from "../../cart/cartSlice";
+import { handleVisibility, initializeCart } from "../../cart/cartSlice";
 import { RootState } from "../../store";
+import { useEffect } from "react";
 
 interface NavbarProps {
   isMenuOpened: boolean;
@@ -19,6 +20,12 @@ function Navbar({ isMenuOpened, setIsMenuOpened }: NavbarProps) {
   function handleClick() {
     dispatch(handleVisibility());
   }
+
+  useEffect(() => {
+    const cart = localStorage.getItem("cart");
+    const parsedCart = cart ? JSON.parse(cart) : [];
+    dispatch(initializeCart(parsedCart));
+  }, [dispatch]);
 
   return (
     <>
