@@ -1,7 +1,11 @@
 .formSection {
   display: grid;
   gap: 1.5rem;
-  margin-block: 5rem;
+  margin-block: 6rem;
+  flex-basis: clamp(12rem, 60vw, 32rem);
+  box-shadow: 0.5rem 0.5rem 1rem rgb(0 0 0 / 0.2);
+  border-radius: 0.5rem;
+  padding: 1rem;
 }
 
 .formSection h3 {
@@ -121,4 +125,22 @@
 
 .disclaimer p {
   color: var(--primary-clr-600);
+}
+
+@media (max-width: 1000px) {
+  .formSection {
+    flex-basis: 100%;
+    margin-bottom: 0rem;
+  }
+}
+
+@media (max-width: 550px) {
+  .groupedInput {
+    flex-direction: column;
+  }
+
+  .formGroup div,
+  .inputContainer.inputContainer.halfWidth {
+    width: 100%;
+  }
 }

@@ -62,7 +62,6 @@ export const {
   removeAllItems,
   handleQuantity,
   handleVisibility,
-  handleCheckout,
 } = cartSlice.actions;
 
 export default cartSlice.reducer;

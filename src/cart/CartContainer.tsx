@@ -5,6 +5,7 @@ import { RootState } from "../store";
 import { handleVisibility, removeAllItems } from "./cartSlice";
 import Button from "../components/Button";
 import { useNavigate } from "react-router-dom";
+import classNames from "classnames";
 
 interface CartContainerProps {
   checkout?: boolean;
@@ -31,7 +32,11 @@ function CartContainer({ checkout }: CartContainerProps) {
   }
 
   return (
-    <div className={styles.cartContainer}>
+    <div
+      className={classNames(styles.cartContainer, {
+        [styles.cartCheckout]: checkout,
+      })}
+    >
       <div className={styles.cartHeader}>
         {checkout ? <h6>SUMMARY</h6> : <h6>CART ({cart.length})</h6>}
         {!checkout && (
@@ -48,7 +53,7 @@ function CartContainer({ checkout }: CartContainerProps) {
         <span>$ {totalPrice}</span>
       </div>
       {checkout && (
-        <>
+        <div>
           <div className={styles.total}>
             <span>SHIPPING</span>
             <span>$ {shipping}</span>
@@ -61,7 +66,7 @@ function CartContainer({ checkout }: CartContainerProps) {
             <span>GRAND TOTAL</span>
             <span>$ {totalPrice + shipping}</span>
           </div>
-        </>
+        </div>
       )}
       <Button
         text={checkout ? "continue & pay" : "checkout"}
