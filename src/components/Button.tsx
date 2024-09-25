@@ -14,7 +14,7 @@ function Button({ path, text, type, functionHandler }: ButtonProps) {
 
   if (path)
     return (
-      <Link to={path} className={className}>
+      <Link to={path} className={className} onClick={functionHandler}>
         {text}
         {type === "transparent" && <img src={iconArrow} />}
       </Link>

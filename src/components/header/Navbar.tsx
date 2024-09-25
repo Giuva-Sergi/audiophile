@@ -3,8 +3,9 @@ import styles from "./Navbar.module.css";
 import logo from "/assets/shared/desktop/logo.svg";
 import cartIcon from "/assets/shared/desktop/icon-cart.svg";
 import Button from "../Button";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { handleVisibility } from "../../cart/cartSlice";
+import { RootState } from "../../store";
 
 interface NavbarProps {
   isMenuOpened: boolean;
@@ -13,10 +14,12 @@ interface NavbarProps {
 
 function Navbar({ isMenuOpened, setIsMenuOpened }: NavbarProps) {
   const dispatch = useDispatch();
+  const cartLength = useSelector((state: RootState) => state.cart.cart).length;
 
   function handleClick() {
     dispatch(handleVisibility());
   }
+
   return (
     <>
       <nav className={styles.primaryNav}>
@@ -24,7 +27,9 @@ function Navbar({ isMenuOpened, setIsMenuOpened }: NavbarProps) {
           type="menu"
           functionHandler={() => setIsMenuOpened(!isMenuOpened)}
         />
-        <img src={logo} alt="audiophile logo" />
+        <Link to="/">
+          <img src={logo} alt="audiophile logo" />
+        </Link>
         <ul className={styles.navLinks}>
           <li>
             <Link to="/">Home</Link>
@@ -39,7 +44,7 @@ function Navbar({ isMenuOpened, setIsMenuOpened }: NavbarProps) {
             <Link to="/product/earphones">earphones</Link>
           </li>
         </ul>
-        <button onClick={handleClick}>
+        <button onClick={handleClick} disabled={cartLength === 0}>
           <img src={cartIcon} alt="cart icon" />
         </button>
       </nav>
