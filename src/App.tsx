@@ -3,6 +3,7 @@ import AppLayout from "./pages/AppLayout";
 import ProductPage from "./pages/productpage/ProductPage";
 import Homepage from "./pages/homepage/Homepage";
 import ProductDetail from "./pages/productdetail/ProductDetail";
+import CheckoutPage from "./pages/checkout/CheckoutPage";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
           path="product/:productCategory/:slug"
           element={<ProductDetail />}
         />
+        <Route path="checkout" element={<CheckoutPage />} />
       </Route>
     </Routes>
   );
