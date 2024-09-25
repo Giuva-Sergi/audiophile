@@ -15,6 +15,8 @@ function CartContainer({ checkout }: CartContainerProps) {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
+  const shipping = 50;
+
   const totalPrice = cart.reduce((acc, item) => {
     return acc + item.price * item.quantity;
   }, 0);
@@ -49,11 +51,15 @@ function CartContainer({ checkout }: CartContainerProps) {
         <>
           <div className={styles.total}>
             <span>SHIPPING</span>
-            <span>$ 50</span>
+            <span>$ {shipping}</span>
           </div>
           <div className={styles.total}>
             <span>VAT (INCLUDED)</span>
             <span>$ {Math.round(totalPrice * 0.2)}</span>
+          </div>
+          <div className={styles.total}>
+            <span>GRAND TOTAL</span>
+            <span>$ {totalPrice + shipping}</span>
           </div>
         </>
       )}

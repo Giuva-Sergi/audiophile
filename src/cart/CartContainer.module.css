@@ -53,6 +53,10 @@
   font-weight: var(--fw-bold);
 }
 
+.total:last-of-type {
+  color: var(--primary-clr-500);
+}
+
 @media (max-width: 650px) {
   .cartContainer {
     width: 95vw;
