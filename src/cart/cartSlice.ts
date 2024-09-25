@@ -4,13 +4,11 @@ import { CartProduct } from "../types";
 
 export interface CartState {
   cart: Array<CartProduct>;
-  isCheckout: boolean;
   isVisible: boolean;
 }
 
 const initialState: CartState = {
   cart: [],
-  isCheckout: false,
   isVisible: false,
 };
 
@@ -49,18 +47,10 @@ export const cartSlice = createSlice({
     handleVisibility: (state) => {
       state.isVisible = !state.isVisible;
     },
-    handleCheckout: (state) => {
-      state.isCheckout = !state.isCheckout;
-    },
   },
 });
 
-export const {
-  handleItem,
-  removeAllItems,
-  handleQuantity,
-  handleVisibility,
-  handleCheckout,
-} = cartSlice.actions;
+export const { handleItem, removeAllItems, handleQuantity, handleVisibility } =
+  cartSlice.actions;
 
 export default cartSlice.reducer;
