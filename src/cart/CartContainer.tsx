@@ -68,11 +68,13 @@ function CartContainer({ checkout }: CartContainerProps) {
           </div>
         </div>
       )}
-      <Button
-        text={checkout ? "continue & pay" : "checkout"}
-        type="dense"
-        functionHandler={() => handleClick("checkout")}
-      />
+      {!checkout && (
+        <Button
+          text={"checkout"}
+          type="dense"
+          functionHandler={() => handleClick("checkout")}
+        />
+      )}
     </div>
   );
 }

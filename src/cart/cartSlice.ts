@@ -49,6 +49,9 @@ export const cartSlice = createSlice({
           : item
       );
       localStorage.setItem("cart", JSON.stringify(state.cart));
+      if (state.cart.length === 0) {
+        state.isVisible = false;
+      }
     },
     handleVisibility: (state) => {
       state.isVisible = !state.isVisible;

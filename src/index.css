@@ -51,14 +51,15 @@ h6 {
 
 :root {
   --primary-clr-900: hsl(0, 0%, 6%);
-  --primary-clr-600: #777777;
+  --primary-clr-600: hsl(0, 0%, 47%);
   --primary-clr-500: hsl(22, 65%, 57%);
   --primary-clr-200: hsl(0, 0%, 95%);
   --primary-clr-100: hsl(0, 0%, 98%);
 
   --accent-clr-900: hsl(0, 0%, 0%);
+  --accent-clr-600: hsl(0, 65%, 49%);
   --accent-clr-300: hsl(21, 94%, 75%);
-  --accent-clr-200: #f1f1f1;
+  --accent-clr-200: hsl(0, 0%, 95%);
   --accent-clr-100: hsl(0, 0%, 100%);
 
   --fs-h1: 3.5rem;

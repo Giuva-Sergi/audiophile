@@ -51,6 +51,7 @@
 .flexGroup span,
 .radioContainer label {
   font-weight: var(--fw-bold);
+  text-wrap: nowrap;
 }
 
 .inputContainer input,
@@ -125,6 +126,27 @@
 
 .disclaimer p {
   color: var(--primary-clr-600);
+}
+
+.errorContainer {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.errorContainer span {
+  font-weight: var(--fw-bold);
+  color: var(--accent-clr-600);
+  text-wrap: nowrap;
+  margin-left: 3rem;
+}
+
+.inputContainer .inputError:focus {
+  outline: 3px solid var(--accent-clr-600);
+}
+
+.radioError:has(input:focus) {
+  outline: 3px solid var(--accent-clr-600);
 }
 
 @media (max-width: 1000px) {
