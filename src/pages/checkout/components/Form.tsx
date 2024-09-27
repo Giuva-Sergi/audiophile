@@ -4,6 +4,8 @@ import styles from "./Form.module.css";
 import { FieldsValue, fieldsValueSchema } from "../../../types";
 import { zodResolver } from "@hookform/resolvers/zod";
 import classNames from "classnames";
+import { useDispatch } from "react-redux";
+import { handleCheckOut } from "../../../cart/cartSlice";
 
 function Form() {
   const {
@@ -14,10 +16,12 @@ function Form() {
   } = useForm<FieldsValue>({
     resolver: zodResolver(fieldsValueSchema),
   });
+  const dispatch = useDispatch();
 
   const onSubmit: SubmitHandler<FieldsValue> = (data) => {
     console.log("FORM DATA:", data);
     console.log("FORM ERRORS:", errors);
+    dispatch(handleCheckOut());
   };
 
   return (

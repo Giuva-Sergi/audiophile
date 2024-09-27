@@ -1,11 +1,11 @@
-import styles from "./Cart.module.css";
+import Overlay from "../components/Overlay";
 import CartContainer from "./CartContainer";
 
 function Cart() {
   return (
-    <div className={styles.overlay}>
+    <Overlay>
       <CartContainer />
-    </div>
+    </Overlay>
   );
 }
 
