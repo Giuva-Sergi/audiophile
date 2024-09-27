@@ -5,23 +5,28 @@ import { useSelector } from "react-redux";
 import { RootState } from "../store";
 import Cart from "../cart/Cart";
 import { useEffect } from "react";
+import Modal from "../components/modal/Modal";
 
 function AppLayout() {
   const isVisible = useSelector((state: RootState) => state.cart.isVisible);
+  const isCheckedOut = useSelector(
+    (state: RootState) => state.cart.isCheckedOut
+  );
 
   useEffect(() => {
-    if (isVisible) {
+    if (isVisible || isCheckedOut) {
       document.querySelector("body")!.style.overflow = "hidden";
     }
 
     return () => (document.querySelector("body")!.style.overflow = "");
-  }, [isVisible]);
+  }, [isVisible, isCheckedOut]);
 
   return (
     <>
       <Header />
       <Outlet />
       {isVisible && <Cart />}
+      {isCheckedOut && <Modal />}
       <Footer />
     </>
   );

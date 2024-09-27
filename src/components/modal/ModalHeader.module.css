@@ -1,0 +1,16 @@
+.header {
+  display: grid;
+  gap: 1rem;
+}
+
+.header h5 {
+  font-size: var(--fs-h5);
+  line-height: var(--line-space-h5);
+  letter-spacing: var(--char-space-h5);
+  font-weight: var(--fw-bold);
+  text-transform: uppercase;
+}
+
+.header p {
+  color: var(--primary-clr-600);
+}

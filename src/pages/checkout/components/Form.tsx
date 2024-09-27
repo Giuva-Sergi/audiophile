@@ -18,9 +18,7 @@ function Form() {
   });
   const dispatch = useDispatch();
 
-  const onSubmit: SubmitHandler<FieldsValue> = (data) => {
-    console.log("FORM DATA:", data);
-    console.log("FORM ERRORS:", errors);
+  const onSubmit: SubmitHandler<FieldsValue> = () => {
     dispatch(handleCheckOut());
   };
 

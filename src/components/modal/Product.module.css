@@ -1,0 +1,18 @@
+.productItem {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.productItem img {
+  width: 4.5rem;
+  aspect-ratio: 1;
+}
+
+.productItem p {
+  font-weight: var(--fw-bold);
+}
+
+.productItem p:last-child {
+  color: var(--primary-clr-600);
+}

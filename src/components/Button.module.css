@@ -63,6 +63,10 @@ img {
   z-index: 9999;
 }
 
+.btn-back {
+  width: unset;
+}
+
 @media (min-width: 700px) {
   .btn-menu {
     display: none;
