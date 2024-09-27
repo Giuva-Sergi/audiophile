@@ -27,11 +27,15 @@ function Form() {
         <div className={styles.formGroup}>
           <p className={styles.fieldType}>billing details</p>
           <div className={styles.groupedInput}>
-            <div className={styles.inputContainer}>
-              <div className={styles.errorContainer}>
-                <label htmlFor="name">Name</label>
-                {errors.name && <span>{errors.name.message}</span>}
-              </div>
+            <div
+              className={classNames(styles.inputContainer, {
+                [styles.containerError]: errors.name,
+              })}
+            >
+              <label htmlFor="name">Name</label>
+              {errors.name && (
+                <span className={styles.error}>{errors.name.message}</span>
+              )}
               <input
                 {...register("name")}
                 type="text"
@@ -40,11 +44,15 @@ function Form() {
                 className={errors.name && styles.inputError}
               />
             </div>
-            <div className={styles.inputContainer}>
-              <div className={styles.errorContainer}>
-                <label htmlFor="email">Email Address</label>
-                {errors.email && <span>{errors.email.message}</span>}
-              </div>
+            <div
+              className={classNames(styles.inputContainer, {
+                [styles.containerError]: errors.name,
+              })}
+            >
+              <label htmlFor="email">Email Address</label>
+              {errors.email && (
+                <span className={styles.error}>{errors.email.message}</span>
+              )}
               <input
                 {...register("email")}
                 type="text"
@@ -55,11 +63,15 @@ function Form() {
             </div>
           </div>
         </div>
-        <div className={`${styles.inputContainer} ${styles.halfWidth}`}>
-          <div className={styles.errorContainer}>
-            <label htmlFor="number">Phone Number</label>
-            {errors.phone && <span>{errors.phone.message}</span>}
-          </div>
+        <div
+          className={classNames(styles.inputContainer, styles.halfWidth, {
+            [styles.containerError]: errors.name,
+          })}
+        >
+          <label htmlFor="number">Phone Number</label>
+          {errors.phone && (
+            <span className={styles.error}>{errors.phone.message}</span>
+          )}
           <input
             {...register("phone")}
             type="tel"
@@ -70,11 +82,15 @@ function Form() {
         </div>
         <div className={styles.formGroup}>
           <p className={styles.fieldType}>shipping info</p>
-          <div className={styles.inputContainer}>
-            <div className={styles.errorContainer}>
-              <label htmlFor="address">Address</label>
-              {errors.address && <span>{errors.address.message}</span>}
-            </div>
+          <div
+            className={classNames(styles.inputContainer, {
+              [styles.containerError]: errors.name,
+            })}
+          >
+            <label htmlFor="address">Address</label>
+            {errors.address && (
+              <span className={styles.error}>{errors.address.message}</span>
+            )}
             <input
               {...register("address")}
               type="address"
@@ -84,11 +100,15 @@ function Form() {
             />
           </div>
           <div className={styles.groupedInput}>
-            <div className={styles.inputContainer}>
-              <div className={styles.errorContainer}>
-                <label htmlFor="zip">ZIP Code</label>
-                {errors.zipCode && <span>{errors.zipCode.message}</span>}
-              </div>
+            <div
+              className={classNames(styles.inputContainer, {
+                [styles.containerError]: errors.name,
+              })}
+            >
+              <label htmlFor="zip">ZIP Code</label>
+              {errors.zipCode && (
+                <span className={styles.error}>{errors.zipCode.message}</span>
+              )}
               <input
                 {...register("zipCode")}
                 type="text"
@@ -97,11 +117,15 @@ function Form() {
                 className={errors.zipCode && styles.inputError}
               />
             </div>
-            <div className={styles.inputContainer}>
-              <div className={styles.errorContainer}>
-                <label htmlFor="city">City</label>
-                {errors.city && <span>{errors.city.message}</span>}
-              </div>
+            <div
+              className={classNames(styles.inputContainer, {
+                [styles.containerError]: errors.name,
+              })}
+            >
+              <label htmlFor="city">City</label>
+              {errors.city && (
+                <span className={styles.error}>{errors.city.message}</span>
+              )}
               <input
                 {...register("city")}
                 type="text"
@@ -111,11 +135,15 @@ function Form() {
               />
             </div>
           </div>
-          <div className={`${styles.inputContainer} ${styles.halfWidth}`}>
-            <div className={styles.errorContainer}>
-              <label htmlFor="country">Country</label>
-              {errors.country && <span>{errors.country.message}</span>}
-            </div>
+          <div
+            className={classNames(styles.inputContainer, styles.halfWidth, {
+              [styles.containerError]: errors.name,
+            })}
+          >
+            <label htmlFor="country">Country</label>
+            {errors.country && (
+              <span className={styles.error}>{errors.country.message}</span>
+            )}
             <input
               {...register("country")}
               type="text"
@@ -131,7 +159,9 @@ function Form() {
             <div>
               <span>Payment Method</span>
               {errors.paymentMethod && (
-                <span>{errors.paymentMethod.message}</span>
+                <span className={styles.error}>
+                  {errors.paymentMethod.message}
+                </span>
               )}
             </div>
             <div>

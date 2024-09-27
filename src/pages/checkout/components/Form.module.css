@@ -2,10 +2,9 @@
   display: grid;
   gap: 1.5rem;
   margin-block: 6rem;
-  flex-basis: clamp(12rem, 60vw, 32rem);
-  box-shadow: 0.5rem 0.5rem 1rem rgb(0 0 0 / 0.2);
   border-radius: 0.5rem;
   padding: 1rem;
+  background-color: var(--accent-clr-100);
 }
 
 .formSection h3 {
@@ -43,12 +42,27 @@
   display: grid;
 }
 
+.inputContainer.containerError {
+  grid-template-columns: 1fr 1fr;
+}
+
+.inputContainer input {
+  grid-column: 1 / -1;
+}
+
+.inputContainer .error,
+.flexGroup > div .error {
+  font-weight: var(--fw-bold);
+  color: var(--accent-clr-600);
+  min-width: min-content;
+  text-align: end;
+}
+
 .inputContainer.halfWidth {
   width: calc(50% - 1rem);
 }
 
 .inputContainer label,
-.flexGroup span,
 .radioContainer label {
   font-weight: var(--fw-bold);
   text-wrap: nowrap;
@@ -120,7 +134,7 @@
 
 .disclaimer {
   display: flex;
-  align-items: center;
+  align-items: start;
   gap: 2rem;
 }
 
@@ -151,7 +165,7 @@
 
 @media (max-width: 1000px) {
   .formSection {
-    flex-basis: 100%;
+    /* flex-basis: 100%; */
     margin-bottom: 0rem;
   }
 }
