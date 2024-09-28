@@ -13,3 +13,9 @@
 .container button {
   width: unset;
 }
+
+@media (max-width: 850px) {
+  .container {
+    width: 95vw;
+  }
+}
