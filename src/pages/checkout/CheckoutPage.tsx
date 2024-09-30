@@ -9,8 +9,9 @@ function CheckoutPage() {
     document.querySelector("body")!.style.backgroundColor =
       "var(--accent-clr-200)";
 
-    return () =>
-      (document.querySelector("body")!.style.backgroundColor = "transparent");
+    return () => {
+      document.querySelector("body")!.style.backgroundColor = "transparent";
+    };
   }, []);
   return (
     <Container>
