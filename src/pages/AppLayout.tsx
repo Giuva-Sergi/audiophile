@@ -18,7 +18,9 @@ function AppLayout() {
       document.querySelector("body")!.style.overflow = "hidden";
     }
 
-    return () => (document.querySelector("body")!.style.overflow = "");
+    return () => {
+      document.querySelector("body")!.style.overflow = "";
+    };
   }, [isVisible, isCheckedOut]);
 
   return (
