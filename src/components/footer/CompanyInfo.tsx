@@ -4,6 +4,8 @@ import twitter from "/assets/shared/desktop/icon-twitter.svg";
 import instagram from "/assets/shared/desktop/icon-instagram.svg";
 
 function CompanyInfo() {
+  const year = new Date().getFullYear();
+
   return (
     <div className={styles.companyInfo}>
       <p className={styles.companyDescription}>
@@ -23,7 +25,7 @@ function CompanyInfo() {
           <img src={instagram} alt="" />
         </a>
       </div>
-      <p className={styles.copyright}>Copyright 2021. All Rights Reserved</p>
+      <p className={styles.copyright}>Copyright {year}. All Rights Reserved</p>
     </div>
   );
 }
