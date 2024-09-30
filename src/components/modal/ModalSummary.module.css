@@ -65,6 +65,7 @@
 @media (max-width: 1000px) {
   .summary {
     grid-template-columns: unset;
+    overflow: scroll;
   }
 
   .noBtn {
