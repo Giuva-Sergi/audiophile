@@ -1,50 +1,42 @@
-# React + TypeScript + Vite
+# Audiophile E-commerce Website Challenge
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project is a multi-page e-commerce website built to match a provided design as closely as possible. It features an optimal layout for different devices, an interactive shopping experience, and functionalities for adding/removing products, editing cart quantities, and completing the checkout process with form validation.
 
-Currently, two official plugins are available:
+## Table of Contents
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- [Project Overview](#project-overview)
+- [Features](#features)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Tech Stack](#tech-stack)
+- [Folder Structure](#folder-structure)
+- [Contributing](#contributing)
+- [License](#license)
 
-## Expanding the ESLint configuration
+## Project Overview
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+The goal of this project is to create a fully functional e-commerce website based on a provided design, under the brand name "Audiophile". The challenge is to get the website looking as close as possible to the design, while also implementing full interactivity and responsiveness.
 
-- Configure the top-level `parserOptions` property like this:
+The website includes:
+- A product gallery with detailed pages for each item.
+- A shopping cart where users can add, remove, and adjust quantities of products.
+- A complete checkout process including form validation, order summary, and confirmation modal.
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+If you want to push it further, you can build a backend or use a headless CMS to provide product data dynamically. For simplicity, a `data.json` file is provided for the product information.
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+## Features
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+- **Add/Remove Products from Cart**: Users can add and remove products with ease.
+- **Edit Product Quantities in Cart**: Quantities of each product can be updated directly in the cart.
+- **Checkout Form**: Users fill out personal and payment details with real-time validation.
+- **Order Confirmation**: Display a summary of the order after successful checkout.
+- **Persistent Cart**: Items in the cart are saved in local storage so they are not lost upon refreshing the browser.
+- **Responsive Design**: The website is fully responsive, providing an optimal experience across different screen sizes.
+- **Hover States**: All interactive elements include hover states to improve user experience.
+- **Shipping and VAT Calculations**: Shipping is a flat $50, and VAT is calculated as 20% of the product total (excluding shipping).
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+## Installation
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/your-username/audiophile.git
