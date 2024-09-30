@@ -9,8 +9,6 @@ interface ProductFeatureProps {
 }
 
 function ProductFeature({ product, reverse }: ProductFeatureProps) {
-  // console.log(product);
-
   return (
     <section className={styles.productFeature}>
       {reverse ? (

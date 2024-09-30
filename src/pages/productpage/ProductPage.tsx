@@ -22,7 +22,13 @@ function ProductPage() {
           {filteredProducts.map((prod, i) => (
             <ProductFeature
               key={prod.id}
-              product={prod}
+              product={{
+                ...prod,
+                others: prod.others.map((el) => ({
+                  ...el,
+                  category: prod.category,
+                })),
+              }}
               reverse={i % 2 ? false : true}
             />
           ))}
