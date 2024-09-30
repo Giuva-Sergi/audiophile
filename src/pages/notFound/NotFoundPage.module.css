@@ -1,0 +1,28 @@
+.notFoundContainer {
+  padding: 12rem;
+  text-align: center;
+  margin-top: 100px;
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+
+.errorCode {
+  font-size: 10rem;
+  color: #ff4d4f;
+}
+
+.errorMessage {
+  font-size: 2rem;
+  color: #333;
+}
+
+.homeLink {
+  text-decoration: none;
+  color: #1890ff;
+  font-size: 1.5rem;
+}
+
+.homeLink:hover {
+  text-decoration: underline;
+}

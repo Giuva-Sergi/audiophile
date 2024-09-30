@@ -4,6 +4,7 @@ import ProductPage from "./pages/productpage/ProductPage";
 import Homepage from "./pages/homepage/Homepage";
 import ProductDetail from "./pages/productdetail/ProductDetail";
 import CheckoutPage from "./pages/checkout/CheckoutPage";
+import NotFoundPage from "./pages/notFound/NotFoundPage";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
           element={<ProductDetail />}
         />
         <Route path="checkout" element={<CheckoutPage />} />
+        <Route path="*" element={<NotFoundPage />} />
       </Route>
     </Routes>
   );

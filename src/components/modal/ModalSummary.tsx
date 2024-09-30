@@ -33,12 +33,14 @@ function ModalSummary() {
         <p className={styles.onlyTablet}>
           and {cart.slice(1).length} other element(s)
         </p>
-        <button
-          onClick={() => setShowMore(!showMore)}
-          className={`${styles.btn} ${styles.noBtn}`}
-        >
-          {!showMore ? "View more" : "View less"}
-        </button>
+        {cart.length > 1 && (
+          <button
+            onClick={() => setShowMore(!showMore)}
+            className={`${styles.btn} ${styles.noBtn}`}
+          >
+            {!showMore ? "View more" : "View less"}
+          </button>
+        )}
       </div>
       <div className={styles.total}>
         <div>

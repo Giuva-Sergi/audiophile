@@ -33,6 +33,8 @@ function Navbar({ isMenuOpened, setIsMenuOpened }: NavbarProps) {
         <Button
           type="menu"
           functionHandler={() => setIsMenuOpened(!isMenuOpened)}
+          aria-control="primary-navigation"
+          aria-expanded={isMenuOpened}
         />
         <Link to="/">
           <img src={logo} alt="audiophile logo" />
@@ -51,7 +53,11 @@ function Navbar({ isMenuOpened, setIsMenuOpened }: NavbarProps) {
             <Link to="/product/earphones">earphones</Link>
           </li>
         </ul>
-        <button onClick={handleClick} disabled={cartLength === 0}>
+        <button
+          onClick={handleClick}
+          disabled={cartLength === 0}
+          aria-label="View shopping cart"
+        >
           <img src={cartIcon} alt="cart icon" />
         </button>
       </nav>

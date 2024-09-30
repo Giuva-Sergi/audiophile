@@ -17,7 +17,11 @@ function SecondaryNavigation({
   setIsMenuOpened,
 }: SecondaryNavigationProps) {
   const content = (
-    <nav className={styles.secondaryNav}>
+    <nav
+      className={styles.secondaryNav}
+      id="secondary-navigation"
+      {...(isMenu && { "aria-labelledby": "menu-toggle-button" })}
+    >
       <ul
         className={classNames(styles.navLinks, { [styles.menuLinks]: isMenu })}
       >

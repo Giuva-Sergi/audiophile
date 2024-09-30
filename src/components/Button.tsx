@@ -21,7 +21,11 @@ function Button({ path, text, type, functionHandler }: ButtonProps) {
     );
 
   return (
-    <button className={className} onClick={functionHandler}>
+    <button
+      {...(type === "menu" && { id: "menu-toggle-button" })}
+      className={className}
+      onClick={functionHandler}
+    >
       {text} {type === "transparent" && <img src={iconArrow} />}
     </button>
   );

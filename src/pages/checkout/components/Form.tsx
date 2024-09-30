@@ -48,7 +48,7 @@ function Form() {
             </div>
             <div
               className={classNames(styles.inputContainer, {
-                [styles.containerError]: errors.name,
+                [styles.containerError]: errors.email,
               })}
             >
               <label htmlFor="email">Email Address</label>
@@ -67,7 +67,7 @@ function Form() {
         </div>
         <div
           className={classNames(styles.inputContainer, styles.halfWidth, {
-            [styles.containerError]: errors.name,
+            [styles.containerError]: errors.phone,
           })}
         >
           <label htmlFor="number">Phone Number</label>
@@ -86,7 +86,7 @@ function Form() {
           <p className={styles.fieldType}>shipping info</p>
           <div
             className={classNames(styles.inputContainer, {
-              [styles.containerError]: errors.name,
+              [styles.containerError]: errors.address,
             })}
           >
             <label htmlFor="address">Address</label>
@@ -104,7 +104,7 @@ function Form() {
           <div className={styles.groupedInput}>
             <div
               className={classNames(styles.inputContainer, {
-                [styles.containerError]: errors.name,
+                [styles.containerError]: errors.zipCode,
               })}
             >
               <label htmlFor="zip">ZIP Code</label>
@@ -121,7 +121,7 @@ function Form() {
             </div>
             <div
               className={classNames(styles.inputContainer, {
-                [styles.containerError]: errors.name,
+                [styles.containerError]: errors.city,
               })}
             >
               <label htmlFor="city">City</label>
@@ -139,7 +139,7 @@ function Form() {
           </div>
           <div
             className={classNames(styles.inputContainer, styles.halfWidth, {
-              [styles.containerError]: errors.name,
+              [styles.containerError]: errors.country,
             })}
           >
             <label htmlFor="country">Country</label>

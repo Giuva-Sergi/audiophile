@@ -56,6 +56,8 @@
   color: var(--accent-clr-600);
   min-width: min-content;
   text-align: end;
+  /* grid-row: 1;
+  grid-column: 2; */
 }
 
 .inputContainer.halfWidth {
@@ -140,12 +142,6 @@
 
 .disclaimer p {
   color: var(--primary-clr-600);
-}
-
-.errorContainer {
-  display: flex;
-  width: 100%;
-  justify-content: space-between;
 }
 
 .errorContainer span {
