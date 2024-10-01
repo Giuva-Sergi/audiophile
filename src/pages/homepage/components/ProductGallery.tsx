@@ -39,7 +39,7 @@ function ProductGallery() {
       </div>
       <div className={styles.secondaryProductCard}>
         <div className={styles.innerContainer}>
-          <h4>ZX7 SPEAKER</h4>
+          <h4 className={styles.subHeader}>ZX7 SPEAKER</h4>
           <Button
             text="see product"
             type="outline"
@@ -63,7 +63,7 @@ function ProductGallery() {
           />
         </picture>
         <div className={styles.innerContainerFlex}>
-          <h4>ZX9 SPEAKER</h4>
+          <h4 className={styles.subHeader}>YX1 EARPLUGS</h4>
           <Button
             text="see product"
             type="outline"
