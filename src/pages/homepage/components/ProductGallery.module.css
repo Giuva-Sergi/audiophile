@@ -89,6 +89,10 @@
   gap: 1rem;
 }
 
+.pictureFlex {
+  width: 50%;
+}
+
 .productCardFlex img,
 .productCardFlex .innerContainerFlex {
   border-radius: 0.5rem;
